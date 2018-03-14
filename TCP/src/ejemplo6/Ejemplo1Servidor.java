@@ -1,0 +1,53 @@
+package ejemplo6;
+
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.net.ServerSocket;
+import java.net.Socket;
+
+
+
+public class Ejemplo1Servidor {
+
+	public static void main(String[] args) throws IOException {
+		int numeroPuerto = 6000;
+		ServerSocket servidor = new ServerSocket(numeroPuerto);
+		Socket clienteConectado = null;
+		System.out.println("Esperando al cliente...");
+		clienteConectado = servidor.accept();
+		
+		// Crear flujo de entrada del cliente
+		
+		InputStream entrada = null;
+		entrada = clienteConectado.getInputStream();
+		DataInputStream flujoEntrada = new DataInputStream(entrada);
+		
+		// Recoger un mensaje que envía el cliente
+		
+		System.out.println("Recibiendo mensaje del cliente \n\t" + flujoEntrada.readUTF());
+		
+		// Crear flujo de salida al cliente
+		
+		OutputStream salida = null;
+		salida = clienteConectado.getOutputStream();
+		DataOutputStream flujoSalida = new DataOutputStream(salida);
+		
+		// Envío de un saludo al cliente
+		
+		flujoSalida.writeUTF("Saludos al cliente desde el servidor");
+		
+		// Cerrar streams y sockets. Se han de cerrar los streams relacionados antes que los sockets
+		
+		entrada.close();
+		flujoEntrada.close();
+		salida.close();
+		flujoSalida.close();
+		clienteConectado.close();
+		servidor.close();
+		
+	}
+
+}

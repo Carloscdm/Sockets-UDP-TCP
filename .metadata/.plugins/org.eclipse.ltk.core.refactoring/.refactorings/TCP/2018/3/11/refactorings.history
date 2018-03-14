@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring accessors="true" comment="Delete 3 elements from project &apos;TCP&apos;&#x0D;&#x0A;- Original project: &apos;TCP&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     ejemplo7.Cliente.java&#x0D;&#x0A;     ejemplo7.Persona.java&#x0D;&#x0A;     ejemplo7.Servidor.java" description="Delete elements" element1="/src&lt;ejemplo7{Servidor.java" element2="/src&lt;ejemplo7{Cliente.java" element3="/src&lt;ejemplo7{Persona.java" elements="3" flags="589830" id="org.eclipse.jdt.ui.delete" resources="0" stamp="1520875586578" subPackages="false" version="1.0"/>
+</session>
